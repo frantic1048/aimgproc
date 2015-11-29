@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.AppCompatImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imageView_pic"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/imageView_pic_height"
+    android:layout_margin="@dimen/imageView_pic_margin" />
+

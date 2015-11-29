@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_viewAll"
+            android:icon="@drawable/ic_view_all"
+            android:title="@string/nav_title_allPic" />
+        <item
+            android:id="@+id/nav_viewHigh"
+            android:icon="@drawable/ic_view_high"
+            android:title="@string/nav_title_highPic" />
+        <item
+            android:id="@+id/nav_viewLow"
+            android:icon="@drawable/ic_view_low"
+            android:title="@string/nav_title_lowPic" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_info_white"
+                android:title="@string/nav_title_about" />
+
+        </menu>
+    </item>
+
+</menu>
