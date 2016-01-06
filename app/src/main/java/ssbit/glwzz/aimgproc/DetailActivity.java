@@ -54,7 +54,7 @@ public class DetailActivity extends AppCompatActivity {
                     fabChange_updateIcon();
 
                     Snackbar.make(view, tip,
-                            Snackbar.LENGTH_LONG).setAction(
+                            Snackbar.LENGTH_SHORT).setAction(
                             getResources().getString(R.string.undo),
                             new View.OnClickListener() {
                                 @Override
