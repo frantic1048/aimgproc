@@ -22,7 +22,7 @@ public class Identifier implements Runnable {
         this.pics = pics;
         this.identifyDoneHandler = identifyDoneHandler;
     }
-
+    /*判断是否在数据库中有记录*/
     private boolean haveRecord(OnePic pic) {
         for (Record record : records) {
             if (record.match(pic)) {
@@ -38,6 +38,7 @@ public class Identifier implements Runnable {
     public void run() {
         for (OnePic pic : pics) {
             if (!pic.isIdentified()) {
+                //TODO 为了调试临时注释掉
                 if (!haveRecord(pic)) {
                     pic.setHighQuality(Algorithm.getQuality(pic));
                     pic.setIdInDb(mySQLMan.createRecord(

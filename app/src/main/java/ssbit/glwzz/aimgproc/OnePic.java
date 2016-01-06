@@ -15,6 +15,7 @@ public class OnePic implements Serializable {
     private int windowWidth;
     //    private int windowHeight;
     private int picWidth;
+    /*压缩后的bitmap*/
     private transient Bitmap bitmap;
 
 
