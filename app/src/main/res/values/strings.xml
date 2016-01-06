@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Aimgproc</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="developer">开发者：GLWZZ</string>
+    <string name="progressDialogScan_title">正在扫描手机中的照片</string>
+    <string name="progressDialogScan_msg">这可能需要花费一些时间</string>
+    <string name="progressDialogIdentify_title">程序正在对照片进行分类</string>
+    <string name="progressDialogIdentify_msg">剩余时间我也没有办法估计</string>
+    <string name="toolbar_title_all">全部图片</string>
+    <string name="toolbar_title_high">高质量图片</string>
+    <string name="toolbar_title_low">低质量图片</string>
+    <string name="tip_make_high">您已将该图片标记为高质量</string>
+    <string name="tip_make_low">您已将该图片标记为低质量</string>
+    <string name="tip_no_make">该图片质量信息尚未获得，程序正在紧张处理中</string>
+    <string name="undo">撤销</string>
+    <string name="nav_title_about">关于</string>
+    <string name="nav_title_allPic">全部图片</string>
+    <string name="nav_title_highPic">高质量</string>
+    <string name="nav_title_lowPic">低质量</string>
+    <string name="nav_head_developer">Aimgproc@glwzz.ssbit</string>
+
+
+</resources>
