@@ -8,7 +8,7 @@
     <string name="progressDialogScan_title">正在扫描手机中的照片</string>
     <string name="progressDialogScan_msg">这可能需要花费一些时间</string>
     <string name="progressDialogIdentify_title">程序正在对照片进行分类</string>
-    <string name="progressDialogIdentify_msg">剩余时间我也没有办法估计</string>
+    <string name="progressDialogIdentify_msg">这可能需要花费一些时间，请耐心等待</string>
     <string name="toolbar_title_all">全部图片</string>
     <string name="toolbar_title_high">高质量图片</string>
     <string name="toolbar_title_low">低质量图片</string>

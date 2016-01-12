@@ -5,44 +5,69 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.util.Log;
 
+import java.util.Arrays;
+
 
 public class Algorithm {
     private static int[] px;
-    public static boolean getQuality(OnePic pic){
+
+    public static boolean getQuality(OnePic pic) {
         /*true表示高质量，false表示低质量*/
-        Bitmap bitmap=BitmapFactory.decodeFile(pic.getPath());
-        int width=bitmap.getWidth();
-        int height=bitmap.getHeight();
+        Bitmap bitmap = BitmapFactory.decodeFile(pic.getPath());
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
         /*复用int数组减少内存占用*/
-        if(px==null){
-            px=new int[width*height];
-        }else if(px.length!=width*height){
-            Log.i("pxLength",px.length+"");
-            px=new int[width*height];
+        if (px == null) {
+            px = new int[width * height];
+        } else if (px.length != width * height) {
+            Log.i("pxLength", px.length + "");
+            px = new int[width * height];
         }
         /*测试这一段需要在identifier中注释掉haveRecord*/
-        bitmap.getPixels(px,0,width,0,0,width,height);
-        Log.i("bitmapPx","px.Length:"+px.length+",width:"+width+",height:"+height);
+        bitmap.getPixels(px, 0, width, 0, 0, width, height);
 
         return synthesize(
-                alg_1(px,width,height),
-                alg_2(px, width, height)
+                new double[]{
+                        alg_1(px, width, height),
+                        alg_2(px, width, height),
+                        alg_3(px, width, height),
+                        alg_4(px, width, height)
+                }
+
         );
     }
-    public  static  boolean synthesize(double a,double b){
+
+    public static boolean synthesize(double arr[]) {
         /*综合各种因素来判断照片质量是否属于高质量*/
-        if(a>0.3||b>0.3){
-            return false;
-        }else{
-            return true;
+        Log.i("质量", Arrays.toString(arr));
+        double[] sill = new double[]{0.5, 0.07, 0.5, 0.58};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > sill[i]) {
+                return false;
+            }
         }
+        return true;
 
     }
-    public static double alg_1(int[] px,int width,int height){
 
-        return Color.red(px[width/2+height])/255.0;
+    /*纯色*/
+    public static double alg_1(int[] px, int width, int height) {
+
+        return ALG_ColorPurity.estimate(px, width, height);
     }
-    public static double alg_2(int[] px,int width,int height){
-        return Color.green(px[height/2+width])/255.0;
+
+    /*过曝*/
+    public static double alg_2(int[] px, int width, int height) {
+        return ALG_Exposure.determine(px, width, height);
+    }
+
+    /*噪声*/
+    public static double alg_3(int[] px, int width, int height) {
+        return ALG_ImageNoise.estimate(px, width, height);
+    }
+
+    /*模糊*/
+    public static double alg_4(int[] px, int width, int height) {
+        return ALG_Blurness.blurness(px, width, height);
     }
 }

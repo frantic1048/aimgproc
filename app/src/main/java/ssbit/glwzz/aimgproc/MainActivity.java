@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } else {
                     if (progressDialog_identify == null) {
-                        Toast.makeText(MainActivity.this, "@@@", Toast.LENGTH_LONG).show();
                         String title = getResources().
                                 getString(R.string.progressDialogIdentify_title);
                         String msg = getResources()

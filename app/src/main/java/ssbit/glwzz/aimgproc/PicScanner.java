@@ -45,7 +45,7 @@ public class PicScanner implements Runnable {
                     }
             );
             /*仅调试使用，为了保证速度最多扫描10张图片*/
-            int i=0,maxAmount=10;
+            int i=0,maxAmount=100;
             for (File fp : photos) {
                 if(i++>maxAmount){
                     break;
